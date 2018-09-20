@@ -1,0 +1,13 @@
+﻿빌드 시작: 2018-08-20 오후 9:03:17
+     1>2 노드의 "d:\user document\Document\visual studio 2012\Projects\CtoCPP_List_ex_lec_3\CtoCPP_List_ex_lec_3\CtoCPP_List_ex_lec_3.vcxproj" 프로젝트(Build 대상)입니다.
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt CtoCPP_List_ex_lec_3.cpp stdafx.cpp
+         stdafx.cpp
+         CtoCPP_List_ex_lec_3.cpp
+     1>d:\user document\document\visual studio 2012\projects\ctocpp_list_ex_lec_3\ctocpp_list_ex_lec_3\ctocpp_list_ex_lec_3.cpp(5): fatal error C1083: 포함 파일을 열 수 없습니다. 'stdlib': No such file or directory
+         코드를 생성하고 있습니다...
+     1>"d:\user document\Document\visual studio 2012\Projects\CtoCPP_List_ex_lec_3\CtoCPP_List_ex_lec_3\CtoCPP_List_ex_lec_3.vcxproj" 프로젝트를 빌드했습니다(Build 대상). - 실패
+
+빌드하지 못했습니다.
+
+경과 시간: 00:00:00.80
