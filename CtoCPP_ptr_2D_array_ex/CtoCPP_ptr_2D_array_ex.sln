@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CtoCPP_ptr_2D_array_ex", "CtoCPP_ptr_2D_array_ex\CtoCPP_ptr_2D_array_ex.vcxproj", "{FE619303-64D1-4CBB-A18B-13B6DC2A7E07}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FE619303-64D1-4CBB-A18B-13B6DC2A7E07}.Debug|Win32.ActiveCfg = Debug|Win32
+		{FE619303-64D1-4CBB-A18B-13B6DC2A7E07}.Debug|Win32.Build.0 = Debug|Win32
+		{FE619303-64D1-4CBB-A18B-13B6DC2A7E07}.Release|Win32.ActiveCfg = Release|Win32
+		{FE619303-64D1-4CBB-A18B-13B6DC2A7E07}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
