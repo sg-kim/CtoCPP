@@ -1,0 +1,361 @@
+﻿빌드 시작: 2018-09-12 오후 9:54:43
+     1>2 노드의 "d:\user document\Document\visual studio 2012\Projects\CtoCPP_poker_probability_lec5\CtoCPP_poker_probability_lec5\CtoCPP_poker_probability_lec5.vcxproj" 프로젝트(Build 대상)입니다.
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt CtoCPP_poker_probability_lec5.cpp
+         CtoCPP_poker_probability_lec5.cpp
+     1>d:\user document\document\visual studio 2012\projects\ctocpp_poker_probability_lec5\ctocpp_poker_probability_lec5\ctocpp_poker_probability_lec5.cpp(60): error C2679: 이항 '<<' : 오른쪽 피연산자로 'suit' 형식을 사용하는 연산자가 없거나 허용되는 변환이 없습니다.
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\ostream(695): 'std::basic_ostream<_Elem,_Traits> &std::operator <<<char,std::char_traits<char>>(std::basic_ostream<_Elem,_Traits> &,const char *)'일 수 있습니다.
+                 with
+                 [
+                     _Elem=char,
+                     _Traits=std::char_traits<char>
+                 ]
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\ostream(742): 또는       'std::basic_ostream<_Elem,_Traits> &std::operator <<<char,std::char_traits<char>>(std::basic_ostream<_Elem,_Traits> &,char)'
+                 with
+                 [
+                     _Elem=char,
+                     _Traits=std::char_traits<char>
+                 ]
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\ostream(780): 또는       'std::basic_ostream<_Elem,_Traits> &std::operator <<<std::char_traits<char>>(std::basic_ostream<_Elem,_Traits> &,const char *)'
+                 with
+                 [
+                     _Elem=char,
+                     _Traits=std::char_traits<char>
+                 ]
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\ostream(827): 또는       'std::basic_ostream<_Elem,_Traits> &std::operator <<<std::char_traits<char>>(std::basic_ostream<_Elem,_Traits> &,char)'
+                 with
+                 [
+                     _Elem=char,
+                     _Traits=std::char_traits<char>
+                 ]
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\ostream(953): 또는       'std::basic_ostream<_Elem,_Traits> &std::operator <<<std::char_traits<char>>(std::basic_ostream<_Elem,_Traits> &,const signed char *)'
+                 with
+                 [
+                     _Elem=char,
+                     _Traits=std::char_traits<char>
+                 ]
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\ostream(960): 또는       'std::basic_ostream<_Elem,_Traits> &std::operator <<<std::char_traits<char>>(std::basic_ostream<_Elem,_Traits> &,signed char)'
+                 with
+                 [
+                     _Elem=char,
+                     _Traits=std::char_traits<char>
+                 ]
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\ostream(967): 또는       'std::basic_ostream<_Elem,_Traits> &std::operator <<<std::char_traits<char>>(std::basic_ostream<_Elem,_Traits> &,const unsigned char *)'
+                 with
+                 [
+                     _Elem=char,
+                     _Traits=std::char_traits<char>
+                 ]
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\ostream(974): 또는       'std::basic_ostream<_Elem,_Traits> &std::operator <<<std::char_traits<char>>(std::basic_ostream<_Elem,_Traits> &,unsigned char)'
+                 with
+                 [
+                     _Elem=char,
+                     _Traits=std::char_traits<char>
+                 ]
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\ostream(984): 또는       'std::basic_ostream<_Elem,_Traits> &std::operator <<<char,std::char_traits<char>,suit>(std::basic_ostream<_Elem,_Traits> &&,const _Ty &)'
+                 with
+                 [
+                     _Elem=char,
+                     _Traits=std::char_traits<char>,
+                     _Ty=suit
+                 ]
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\ostream(1101): 또는       'std::basic_ostream<_Elem,_Traits> &std::operator <<<char,std::char_traits<char>>(std::basic_ostream<_Elem,_Traits> &,const std::error_code &)'
+                 with
+                 [
+                     _Elem=char,
+                     _Traits=std::char_traits<char>
+                 ]
+                 d:\user document\document\visual studio 2012\projects\ctocpp_poker_probability_lec5\ctocpp_poker_probability_lec5\ctocpp_poker_probability_lec5.cpp(58): 또는       'std::ostream &operator <<(std::ostream &,card &)'
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\ostream(201): 또는       'std::basic_ostream<_Elem,_Traits> &std::basic_ostream<_Elem,_Traits>::operator <<(std::basic_ostream<_Elem,_Traits> &(__cdecl *)(std::basic_ostream<_Elem,_Traits> &))'
+                 with
+                 [
+                     _Elem=char,
+                     _Traits=std::char_traits<char>
+                 ]
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\ostream(207): 또는       'std::basic_ostream<_Elem,_Traits> &std::basic_ostream<_Elem,_Traits>::operator <<(std::basic_ios<_Elem,_Traits> &(__cdecl *)(std::basic_ios<_Elem,_Traits> &))'
+                 with
+                 [
+                     _Elem=char,
+                     _Traits=std::char_traits<char>
+                 ]
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\ostream(214): 또는       'std::basic_ostream<_Elem,_Traits> &std::basic_ostream<_Elem,_Traits>::operator <<(std::ios_base &(__cdecl *)(std::ios_base &))'
+                 with
+                 [
+                     _Elem=char,
+                     _Traits=std::char_traits<char>
+                 ]
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\ostream(221): 또는       'std::basic_ostream<_Elem,_Traits> &std::basic_ostream<_Elem,_Traits>::operator <<(std::_Bool)'
+                 with
+                 [
+                     _Elem=char,
+                     _Traits=std::char_traits<char>
+                 ]
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\ostream(241): 또는       'std::basic_ostream<_Elem,_Traits> &std::basic_ostream<_Elem,_Traits>::operator <<(short)'
+                 with
+                 [
+                     _Elem=char,
+                     _Traits=std::char_traits<char>
+                 ]
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\ostream(275): 또는       'std::basic_ostream<_Elem,_Traits> &std::basic_ostream<_Elem,_Traits>::operator <<(unsigned short)'
+                 with
+                 [
+                     _Elem=char,
+                     _Traits=std::char_traits<char>
+                 ]
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\ostream(295): 또는       'std::basic_ostream<_Elem,_Traits> &std::basic_ostream<_Elem,_Traits>::operator <<(int)'
+                 with
+                 [
+                     _Elem=char,
+                     _Traits=std::char_traits<char>
+                 ]
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\ostream(320): 또는       'std::basic_ostream<_Elem,_Traits> &std::basic_ostream<_Elem,_Traits>::operator <<(unsigned int)'
+                 with
+                 [
+                     _Elem=char,
+                     _Traits=std::char_traits<char>
+                 ]
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\ostream(340): 또는       'std::basic_ostream<_Elem,_Traits> &std::basic_ostream<_Elem,_Traits>::operator <<(long)'
+                 with
+                 [
+                     _Elem=char,
+                     _Traits=std::char_traits<char>
+                 ]
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\ostream(360): 또는       'std::basic_ostream<_Elem,_Traits> &std::basic_ostream<_Elem,_Traits>::operator <<(unsigned long)'
+                 with
+                 [
+                     _Elem=char,
+                     _Traits=std::char_traits<char>
+                 ]
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\ostream(381): 또는       'std::basic_ostream<_Elem,_Traits> &std::basic_ostream<_Elem,_Traits>::operator <<(__int64)'
+                 with
+                 [
+                     _Elem=char,
+                     _Traits=std::char_traits<char>
+                 ]
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\ostream(401): 또는       'std::basic_ostream<_Elem,_Traits> &std::basic_ostream<_Elem,_Traits>::operator <<(unsigned __int64)'
+                 with
+                 [
+                     _Elem=char,
+                     _Traits=std::char_traits<char>
+                 ]
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\ostream(422): 또는       'std::basic_ostream<_Elem,_Traits> &std::basic_ostream<_Elem,_Traits>::operator <<(float)'
+                 with
+                 [
+                     _Elem=char,
+                     _Traits=std::char_traits<char>
+                 ]
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\ostream(442): 또는       'std::basic_ostream<_Elem,_Traits> &std::basic_ostream<_Elem,_Traits>::operator <<(double)'
+                 with
+                 [
+                     _Elem=char,
+                     _Traits=std::char_traits<char>
+                 ]
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\ostream(462): 또는       'std::basic_ostream<_Elem,_Traits> &std::basic_ostream<_Elem,_Traits>::operator <<(long double)'
+                 with
+                 [
+                     _Elem=char,
+                     _Traits=std::char_traits<char>
+                 ]
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\ostream(482): 또는       'std::basic_ostream<_Elem,_Traits> &std::basic_ostream<_Elem,_Traits>::operator <<(const void *)'
+                 with
+                 [
+                     _Elem=char,
+                     _Traits=std::char_traits<char>
+                 ]
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\ostream(502): 또는       'std::basic_ostream<_Elem,_Traits> &std::basic_ostream<_Elem,_Traits>::operator <<(std::basic_streambuf<_Elem,_Traits> *)'
+                 with
+                 [
+                     _Elem=char,
+                     _Traits=std::char_traits<char>
+                 ]
+                 인수 목록 '(std::basic_ostream<_Elem,_Traits>, suit)'을(를) 일치시키는 동안
+                 with
+                 [
+                     _Elem=char,
+                     _Traits=std::char_traits<char>
+                 ]
+     1>d:\user document\document\visual studio 2012\projects\ctocpp_poker_probability_lec5\ctocpp_poker_probability_lec5\ctocpp_poker_probability_lec5.cpp(69): error C2374: 'c' : 재정의. 여러 번 초기화했습니다.
+                 d:\user document\document\visual studio 2012\projects\ctocpp_poker_probability_lec5\ctocpp_poker_probability_lec5\ctocpp_poker_probability_lec5.cpp(67) : 'c' 선언을 참조하십시오.
+     1>d:\user document\document\visual studio 2012\projects\ctocpp_poker_probability_lec5\ctocpp_poker_probability_lec5\ctocpp_poker_probability_lec5.cpp(70): error C2440: '=' : 'card'에서 'card'(으)로 변환할 수 없습니다.
+     1>d:\user document\document\visual studio 2012\projects\ctocpp_poker_probability_lec5\ctocpp_poker_probability_lec5\ctocpp_poker_probability_lec5.cpp(71): error C2374: 'c' : 재정의. 여러 번 초기화했습니다.
+                 d:\user document\document\visual studio 2012\projects\ctocpp_poker_probability_lec5\ctocpp_poker_probability_lec5\ctocpp_poker_probability_lec5.cpp(67) : 'c' 선언을 참조하십시오.
+     1>d:\user document\document\visual studio 2012\projects\ctocpp_poker_probability_lec5\ctocpp_poker_probability_lec5\ctocpp_poker_probability_lec5.cpp(72): error C2440: '=' : 'card'에서 'card'(으)로 변환할 수 없습니다.
+     1>d:\user document\document\visual studio 2012\projects\ctocpp_poker_probability_lec5\ctocpp_poker_probability_lec5\ctocpp_poker_probability_lec5.cpp(73): error C2374: 'c' : 재정의. 여러 번 초기화했습니다.
+                 d:\user document\document\visual studio 2012\projects\ctocpp_poker_probability_lec5\ctocpp_poker_probability_lec5\ctocpp_poker_probability_lec5.cpp(67) : 'c' 선언을 참조하십시오.
+     1>d:\user document\document\visual studio 2012\projects\ctocpp_poker_probability_lec5\ctocpp_poker_probability_lec5\ctocpp_poker_probability_lec5.cpp(74): error C2440: '=' : 'card'에서 'card'(으)로 변환할 수 없습니다.
+     1>d:\user document\document\visual studio 2012\projects\ctocpp_poker_probability_lec5\ctocpp_poker_probability_lec5\ctocpp_poker_probability_lec5.cpp(81): error C2679: 이항 '<<' : 오른쪽 피연산자로 'suit' 형식을 사용하는 연산자가 없거나 허용되는 변환이 없습니다.
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\ostream(695): 'std::basic_ostream<_Elem,_Traits> &std::operator <<<char,std::char_traits<char>>(std::basic_ostream<_Elem,_Traits> &,const char *)'일 수 있습니다.
+                 with
+                 [
+                     _Elem=char,
+                     _Traits=std::char_traits<char>
+                 ]
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\ostream(742): 또는       'std::basic_ostream<_Elem,_Traits> &std::operator <<<char,std::char_traits<char>>(std::basic_ostream<_Elem,_Traits> &,char)'
+                 with
+                 [
+                     _Elem=char,
+                     _Traits=std::char_traits<char>
+                 ]
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\ostream(780): 또는       'std::basic_ostream<_Elem,_Traits> &std::operator <<<std::char_traits<char>>(std::basic_ostream<_Elem,_Traits> &,const char *)'
+                 with
+                 [
+                     _Elem=char,
+                     _Traits=std::char_traits<char>
+                 ]
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\ostream(827): 또는       'std::basic_ostream<_Elem,_Traits> &std::operator <<<std::char_traits<char>>(std::basic_ostream<_Elem,_Traits> &,char)'
+                 with
+                 [
+                     _Elem=char,
+                     _Traits=std::char_traits<char>
+                 ]
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\ostream(953): 또는       'std::basic_ostream<_Elem,_Traits> &std::operator <<<std::char_traits<char>>(std::basic_ostream<_Elem,_Traits> &,const signed char *)'
+                 with
+                 [
+                     _Elem=char,
+                     _Traits=std::char_traits<char>
+                 ]
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\ostream(960): 또는       'std::basic_ostream<_Elem,_Traits> &std::operator <<<std::char_traits<char>>(std::basic_ostream<_Elem,_Traits> &,signed char)'
+                 with
+                 [
+                     _Elem=char,
+                     _Traits=std::char_traits<char>
+                 ]
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\ostream(967): 또는       'std::basic_ostream<_Elem,_Traits> &std::operator <<<std::char_traits<char>>(std::basic_ostream<_Elem,_Traits> &,const unsigned char *)'
+                 with
+                 [
+                     _Elem=char,
+                     _Traits=std::char_traits<char>
+                 ]
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\ostream(974): 또는       'std::basic_ostream<_Elem,_Traits> &std::operator <<<std::char_traits<char>>(std::basic_ostream<_Elem,_Traits> &,unsigned char)'
+                 with
+                 [
+                     _Elem=char,
+                     _Traits=std::char_traits<char>
+                 ]
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\ostream(984): 또는       'std::basic_ostream<_Elem,_Traits> &std::operator <<<char,std::char_traits<char>,suit>(std::basic_ostream<_Elem,_Traits> &&,const _Ty &)'
+                 with
+                 [
+                     _Elem=char,
+                     _Traits=std::char_traits<char>,
+                     _Ty=suit
+                 ]
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\ostream(1101): 또는       'std::basic_ostream<_Elem,_Traits> &std::operator <<<char,std::char_traits<char>>(std::basic_ostream<_Elem,_Traits> &,const std::error_code &)'
+                 with
+                 [
+                     _Elem=char,
+                     _Traits=std::char_traits<char>
+                 ]
+                 d:\user document\document\visual studio 2012\projects\ctocpp_poker_probability_lec5\ctocpp_poker_probability_lec5\ctocpp_poker_probability_lec5.cpp(58): 또는       'std::ostream &operator <<(std::ostream &,card &)'
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\ostream(201): 또는       'std::basic_ostream<_Elem,_Traits> &std::basic_ostream<_Elem,_Traits>::operator <<(std::basic_ostream<_Elem,_Traits> &(__cdecl *)(std::basic_ostream<_Elem,_Traits> &))'
+                 with
+                 [
+                     _Elem=char,
+                     _Traits=std::char_traits<char>
+                 ]
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\ostream(207): 또는       'std::basic_ostream<_Elem,_Traits> &std::basic_ostream<_Elem,_Traits>::operator <<(std::basic_ios<_Elem,_Traits> &(__cdecl *)(std::basic_ios<_Elem,_Traits> &))'
+                 with
+                 [
+                     _Elem=char,
+                     _Traits=std::char_traits<char>
+                 ]
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\ostream(214): 또는       'std::basic_ostream<_Elem,_Traits> &std::basic_ostream<_Elem,_Traits>::operator <<(std::ios_base &(__cdecl *)(std::ios_base &))'
+                 with
+                 [
+                     _Elem=char,
+                     _Traits=std::char_traits<char>
+                 ]
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\ostream(221): 또는       'std::basic_ostream<_Elem,_Traits> &std::basic_ostream<_Elem,_Traits>::operator <<(std::_Bool)'
+                 with
+                 [
+                     _Elem=char,
+                     _Traits=std::char_traits<char>
+                 ]
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\ostream(241): 또는       'std::basic_ostream<_Elem,_Traits> &std::basic_ostream<_Elem,_Traits>::operator <<(short)'
+                 with
+                 [
+                     _Elem=char,
+                     _Traits=std::char_traits<char>
+                 ]
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\ostream(275): 또는       'std::basic_ostream<_Elem,_Traits> &std::basic_ostream<_Elem,_Traits>::operator <<(unsigned short)'
+                 with
+                 [
+                     _Elem=char,
+                     _Traits=std::char_traits<char>
+                 ]
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\ostream(295): 또는       'std::basic_ostream<_Elem,_Traits> &std::basic_ostream<_Elem,_Traits>::operator <<(int)'
+                 with
+                 [
+                     _Elem=char,
+                     _Traits=std::char_traits<char>
+                 ]
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\ostream(320): 또는       'std::basic_ostream<_Elem,_Traits> &std::basic_ostream<_Elem,_Traits>::operator <<(unsigned int)'
+                 with
+                 [
+                     _Elem=char,
+                     _Traits=std::char_traits<char>
+                 ]
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\ostream(340): 또는       'std::basic_ostream<_Elem,_Traits> &std::basic_ostream<_Elem,_Traits>::operator <<(long)'
+                 with
+                 [
+                     _Elem=char,
+                     _Traits=std::char_traits<char>
+                 ]
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\ostream(360): 또는       'std::basic_ostream<_Elem,_Traits> &std::basic_ostream<_Elem,_Traits>::operator <<(unsigned long)'
+                 with
+                 [
+                     _Elem=char,
+                     _Traits=std::char_traits<char>
+                 ]
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\ostream(381): 또는       'std::basic_ostream<_Elem,_Traits> &std::basic_ostream<_Elem,_Traits>::operator <<(__int64)'
+                 with
+                 [
+                     _Elem=char,
+                     _Traits=std::char_traits<char>
+                 ]
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\ostream(401): 또는       'std::basic_ostream<_Elem,_Traits> &std::basic_ostream<_Elem,_Traits>::operator <<(unsigned __int64)'
+                 with
+                 [
+                     _Elem=char,
+                     _Traits=std::char_traits<char>
+                 ]
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\ostream(422): 또는       'std::basic_ostream<_Elem,_Traits> &std::basic_ostream<_Elem,_Traits>::operator <<(float)'
+                 with
+                 [
+                     _Elem=char,
+                     _Traits=std::char_traits<char>
+                 ]
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\ostream(442): 또는       'std::basic_ostream<_Elem,_Traits> &std::basic_ostream<_Elem,_Traits>::operator <<(double)'
+                 with
+                 [
+                     _Elem=char,
+                     _Traits=std::char_traits<char>
+                 ]
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\ostream(462): 또는       'std::basic_ostream<_Elem,_Traits> &std::basic_ostream<_Elem,_Traits>::operator <<(long double)'
+                 with
+                 [
+                     _Elem=char,
+                     _Traits=std::char_traits<char>
+                 ]
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\ostream(482): 또는       'std::basic_ostream<_Elem,_Traits> &std::basic_ostream<_Elem,_Traits>::operator <<(const void *)'
+                 with
+                 [
+                     _Elem=char,
+                     _Traits=std::char_traits<char>
+                 ]
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\ostream(502): 또는       'std::basic_ostream<_Elem,_Traits> &std::basic_ostream<_Elem,_Traits>::operator <<(std::basic_streambuf<_Elem,_Traits> *)'
+                 with
+                 [
+                     _Elem=char,
+                     _Traits=std::char_traits<char>
+                 ]
+                 인수 목록 '(std::basic_ostream<_Elem,_Traits>, suit)'을(를) 일치시키는 동안
+                 with
+                 [
+                     _Elem=char,
+                     _Traits=std::char_traits<char>
+                 ]
+     1>"d:\user document\Document\visual studio 2012\Projects\CtoCPP_poker_probability_lec5\CtoCPP_poker_probability_lec5\CtoCPP_poker_probability_lec5.vcxproj" 프로젝트를 빌드했습니다(Build 대상). - 실패
+
+빌드하지 못했습니다.
+
+경과 시간: 00:00:01.11
