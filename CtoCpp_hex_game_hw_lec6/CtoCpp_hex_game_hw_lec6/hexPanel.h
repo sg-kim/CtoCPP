@@ -2,6 +2,8 @@
 
 #define _HEXPANEL_
 
+enum class edgeStatus: unsigned short{NOTEDGE, TOP, TOPRIGHT, RIGHT, BOTTOMRIGHT, BOTTOM, BOTTOMLEFT, LEFT, TOPLEFT};
+
 class hexPanel
 {
 private:
@@ -12,9 +14,10 @@ private:
 	bool edgeBottom;
 	bool edgeLeft;
 	bool edgeRight;
+	hexPanel* next;
 
 public:
-	hexPanel(unsigned short x = 0, unsigned short y = 0, short c = -1, unsigned short boardSize = 1): xPos(x), yPos(y), color(c)
+	hexPanel(unsigned short x = 0, unsigned short y = 0, short c = -1, hexPanel* nextPtr = nullptr, unsigned short boardSize = 1): xPos(x), yPos(y), color(c), next(nextPtr)
 		{
 			if(xPos == 0){
 				edgeLeft = true;
@@ -48,10 +51,13 @@ public:
 	void setXPos(unsigned short xpos, unsigned short boardSize);
 	void setYPos(unsigned short ypos, unsigned short boardSize);
 	void setColor(unsigned short c);
+	void setNext(hexPanel* nextPtr);
 	unsigned short getXpos();
 	unsigned short getYpos();
 	short getColor();
+	hexPanel* getNext();
 	void examineEdge(unsigned short boardSize);
+	unsigned short getEdgeStatus();
 };
 
 

@@ -56,6 +56,11 @@ void hexPanel::setColor(unsigned short c)
 	color = c;
 }
 
+void hexPanel::setNext(hexPanel* nextPtr)
+{
+	next = nextPtr;
+}
+
 unsigned short hexPanel::getXpos()
 {
 	return xPos;
@@ -69,4 +74,20 @@ unsigned short hexPanel::getYpos()
 short hexPanel::getColor()
 {
 	return color;
+}
+	
+hexPanel* hexPanel::getNext()
+{
+	return next;
+}
+
+unsigned short hexPanel::getEdgeStatus()
+{
+	if(edgeTop == true){
+
+		if(edgeLeft == true){
+		}
+		if(edgeRight == true){
+		}
+	}
 }
