@@ -81,13 +81,35 @@ hexPanel* hexPanel::getNext()
 	return next;
 }
 
-unsigned short hexPanel::getEdgeStatus()
+edgeStatus hexPanel::getEdgeStatus()
 {
 	if(edgeTop == true){
 
 		if(edgeLeft == true){
+			return edgeStatus::TOPLEFT;
 		}
 		if(edgeRight == true){
+			return edgeStatus::TOPRIGHT;
 		}
+		return edgeStatus::TOP;
+	}
+	else if(edgeBottom == true){
+
+		if(edgeLeft == true){
+			return edgeStatus::BOTTOMLEFT;
+		}
+		if(edgeRight == true){
+			return edgeStatus::BOTTOMRIGHT;
+		}
+		return edgeStatus::BOTTOM;
+	}
+	else{
+		if(edgeLeft == true){
+			return edgeStatus::LEFT;
+		}
+		if(edgeRight == true){
+			return edgeStatus::RIGHT;
+		}
+		return edgeStatus::NOTEDGE;
 	}
 }

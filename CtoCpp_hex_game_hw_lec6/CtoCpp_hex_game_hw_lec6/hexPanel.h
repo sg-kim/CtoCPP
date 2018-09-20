@@ -2,7 +2,7 @@
 
 #define _HEXPANEL_
 
-enum class edgeStatus: unsigned short{NOTEDGE, TOP, TOPRIGHT, RIGHT, BOTTOMRIGHT, BOTTOM, BOTTOMLEFT, LEFT, TOPLEFT};
+enum class edgeStatus : unsigned short {NOTEDGE = 0, TOP, TOPRIGHT, RIGHT, BOTTOMRIGHT, BOTTOM, BOTTOMLEFT, LEFT, TOPLEFT};
 
 class hexPanel
 {
@@ -57,7 +57,7 @@ public:
 	short getColor();
 	hexPanel* getNext();
 	void examineEdge(unsigned short boardSize);
-	unsigned short getEdgeStatus();
+	edgeStatus getEdgeStatus();
 };
 
 

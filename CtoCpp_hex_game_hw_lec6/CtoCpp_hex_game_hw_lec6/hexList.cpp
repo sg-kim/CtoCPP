@@ -31,6 +31,11 @@ hexPanel* hexList::getHexPanel()
 	return cursor;
 }
 
+hexList* hexList::getNext()
+{
+	return next;
+}
+
 hexPanel* hexList::search(unsigned short xPos, unsigned short yPos, short color)
 {
 	hexPanel* retVal = nullptr;

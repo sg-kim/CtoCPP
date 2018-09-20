@@ -9,9 +9,10 @@ class hexList
 private:
 	hexPanel* head;
 	hexPanel* cursor;
+	hexList* next;
 
 public:
-	hexList():head(nullptr), cursor(nullptr){}
+	hexList():head(nullptr), cursor(nullptr), next(nullptr){}
 	~hexList()
 	{
 		//hexList* preHead;
@@ -72,6 +73,7 @@ public:
 	void append(hexPanel* panel, unsigned short boardSize);
 	int getLength();
 	hexPanel* getHexPanel();
+	hexList* getNext();
 	hexPanel* search(unsigned short xPos, unsigned short yPos, short color);
 	void resetCursor();
 };
