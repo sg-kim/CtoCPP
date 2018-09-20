@@ -7,17 +7,14 @@ class hexPanel
 private:
 	unsigned short xPos;
 	unsigned short yPos;
-	unsigned short color;
+	short color;	//	negative value = unoccupied
 	bool edgeTop;
 	bool edgeBottom;
 	bool edgeLeft;
 	bool edgeRight;
-	hexPanel* next;
-	hexPanel* child;
 
 public:
-	hexPanel(unsigned short x = 0, unsigned short y = 0, unsigned short c = 0, hexPanel* nxt = nullptr,
-		hexPanel* ch = nullptr, unsigned short boardSize = 1): xPos(x), yPos(y), color(c), next(nxt), child(ch)
+	hexPanel(unsigned short x = 0, unsigned short y = 0, short c = -1, unsigned short boardSize = 1): xPos(x), yPos(y), color(c)
 		{
 			if(xPos == 0){
 				edgeLeft = true;
@@ -51,14 +48,10 @@ public:
 	void setXPos(unsigned short xpos, unsigned short boardSize);
 	void setYPos(unsigned short ypos, unsigned short boardSize);
 	void setColor(unsigned short c);
-	void setNext(hexPanel* nextItem);
-	void setChild(hexPanel* childItem);
 	unsigned short getXpos();
 	unsigned short getYpos();
-	unsigned short getColor();
-	hexPanel* getNext();
-	hexPanel* getChild();
-	void hexPanel::examineEdge(unsigned short boadrSize);
+	short getColor();
+	void examineEdge(unsigned short boardSize);
 };
 
 

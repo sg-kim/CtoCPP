@@ -10,5 +10,6 @@ int hexBoard::setPanel(unsigned short xpos, unsigned short ypos, unsigned short 
 
 	//	examine whether or not there are neighbor friendly hex panel by examining a player(= color)'s paths graphs
 
+
 	//	if there is a friendly hexPanel, expand the player's path graph or create new graph
 }

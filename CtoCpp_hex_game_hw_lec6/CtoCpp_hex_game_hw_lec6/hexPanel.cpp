@@ -56,16 +56,6 @@ void hexPanel::setColor(unsigned short c)
 	color = c;
 }
 
-void hexPanel::setNext(hexPanel* nextItem)
-{
-	next = nextItem;
-}
-
-void hexPanel::setChild(hexPanel* childItem)
-{
-	child = childItem;
-}
-
 unsigned short hexPanel::getXpos()
 {
 	return xPos;
@@ -76,17 +66,7 @@ unsigned short hexPanel::getYpos()
 	return yPos;
 }
 
-unsigned short hexPanel::getColor()
+short hexPanel::getColor()
 {
 	return color;
-}
-
-hexPanel* hexPanel::getNext()
-{
-	return next;
-}
-
-hexPanel* hexPanel::getChild()
-{
-	return child;
 }
