@@ -1,10 +1,15 @@
 
+#include <iostream>
+
 #include "hexList.h"
+
+using namespace std;
 
 void hexList::append(hexPanel* panel, unsigned short boardSize)
 {
 	if(head == nullptr){
 		head = new hexPanel(panel->getXpos(), panel->getYpos(), panel->getColor(), nullptr, boardSize);
+		cursor = head;
 	}
 	else{
 		resetCursor();
@@ -52,7 +57,7 @@ hexPanel* hexList::search(unsigned short xPos, unsigned short yPos, short color)
 	hexPanel* retVal = nullptr;
 	
 	resetCursor();
-	
+
 	while(cursor != nullptr){
 
 		if((cursor->getXpos() == xPos) && (cursor->getYpos() == yPos) && (cursor->getColor() == color)){
@@ -69,4 +74,17 @@ hexPanel* hexList::search(unsigned short xPos, unsigned short yPos, short color)
 void hexList::resetCursor()
 {
 	cursor = head;
+}
+
+void hexList::display()
+{
+	resetCursor();
+
+	while(cursor != nullptr){
+
+		cout << "(" << cursor->getXpos() << ", " << cursor->getYpos() << ", " << cursor->getColor() << ")";
+		cout << "-->";
+
+		cursor = cursor->getNext();
+	}
 }

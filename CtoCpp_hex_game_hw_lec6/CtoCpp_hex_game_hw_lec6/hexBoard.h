@@ -41,6 +41,7 @@ public:
 	void setPanel(unsigned short xpos, unsigned short ypos, unsigned short color);	//	set a panel in the game board
 	bool updatePath(hexPanel panel);	//	update path info whenever a player newly occupies a panel
 	void displayBoard();
+	void displayPath();
 };
 
 

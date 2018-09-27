@@ -77,6 +77,7 @@ public:
 	void setNext(hexList* nextPtr);
 	hexPanel* search(unsigned short xPos, unsigned short yPos, short color);
 	void resetCursor();
+	void display();
 };
 
 #endif // !_HEXLIST_

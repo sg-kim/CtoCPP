@@ -1,5 +1,9 @@
 
+#include <iostream>
+
 #include "hexListList.h"
+
+using namespace std;
 
 void hexListList::append(hexPanel* panel, unsigned short boardSize)
 {
@@ -45,4 +49,18 @@ int hexListList::getLength()
 void hexListList::resetCursor()
 {
 	cursor = head;
+}
+
+void hexListList::display()
+{
+	resetCursor();
+
+	while(cursor != nullptr){
+		cout << "{ ";
+		cursor->display();
+		cout << " } ==> ";
+
+		cursor = cursor->getNext();
+	}
+	cout << endl;
 }

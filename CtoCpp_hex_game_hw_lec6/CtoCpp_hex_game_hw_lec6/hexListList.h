@@ -29,6 +29,7 @@ public:
 	hexList* getList();
 	int getLength();
 	void resetCursor();
+	void display();
 };
 
 #endif // !_HEXLISTLIST_

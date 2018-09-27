@@ -16,6 +16,7 @@ int _tmain(int argc, _TCHAR* argv[])
 {
 	hexBoard* gameBoard;
 	unsigned short boardSize = 5;
+	int winner;
 
 	gameBoard = new hexBoard(boardSize);
 
@@ -24,13 +25,36 @@ int _tmain(int argc, _TCHAR* argv[])
 	for(int i = 0; i < boardSize; i++){
 		for(int j = 0; j < boardSize; j++){
 
-			cout << j << ", " << i << endl;
-
 			gameBoard->setPanel(j, i, i%2);
 		}
 	}
 
 	gameBoard->displayBoard();
+
+	gameBoard->displayPath();
+
+	winner = gameBoard->isWinner();
+
+	cout << "Winner = " << winner << endl;
+
+	delete gameBoard;
+
+	gameBoard = new hexBoard(boardSize);
+
+	for(int i = 0; i < boardSize; i++){
+		for(int j = 0; j < boardSize; j++){
+
+			gameBoard->setPanel(j, i, j%2);
+		}
+	}
+
+	gameBoard->displayBoard();
+
+	gameBoard->displayPath();
+
+	winner = gameBoard->isWinner();
+
+	cout << "Winner = " << winner << endl;
 
 	delete gameBoard;
 
