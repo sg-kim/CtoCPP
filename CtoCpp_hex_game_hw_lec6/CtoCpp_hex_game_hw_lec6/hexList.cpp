@@ -3,19 +3,25 @@
 
 void hexList::append(hexPanel* panel, unsigned short boardSize)
 {
-	cursor = head;
-
-	while(cursor->getNext() != nullptr){
-		cursor = cursor->getNext();
+	if(head == nullptr){
+		head = new hexPanel(panel->getXpos(), panel->getYpos(), panel->getColor(), nullptr, boardSize);
 	}
+	else{
+		resetCursor();
 
-	cursor->setNext(new hexPanel(panel->getXpos(), panel->getYpos(), panel->getColor(), nullptr, boardSize));
+		while(cursor->getNext() != nullptr){
+			cursor = cursor->getNext();
+		}
+
+		cursor->setNext(new hexPanel(panel->getXpos(), panel->getYpos(), panel->getColor(), nullptr, boardSize));
+	}
 }
 
 int hexList::getLength()
 {
-	cursor = head;
 	int count = 0;
+
+	resetCursor();
 
 	while(cursor != nullptr){
 		
@@ -34,6 +40,11 @@ hexPanel* hexList::getHexPanel()
 hexList* hexList::getNext()
 {
 	return next;
+}
+
+void hexList::setNext(hexList* nextPtr)
+{
+	next = nextPtr;
 }
 
 hexPanel* hexList::search(unsigned short xPos, unsigned short yPos, short color)

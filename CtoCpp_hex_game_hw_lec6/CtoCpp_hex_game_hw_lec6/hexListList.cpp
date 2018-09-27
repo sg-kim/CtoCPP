@@ -3,21 +3,34 @@
 
 void hexListList::append(hexPanel* panel, unsigned short boardSize)
 {
-	cursor = new hexList();
+	if(head == nullptr){
+		head = new hexList();
+		cursor = head;
+		cursor->append(panel, boardSize);
+	}
+	else{
+		resetCursor();
 
-	cursor->append(panel, boardSize);
+		while(cursor->getNext() != nullptr){
+			cursor = cursor->getNext();
+		}
+
+		cursor->setNext(new hexList());
+		cursor = cursor->getNext();	//	newly created list
+		cursor->append(panel, boardSize);
+	}
 }
 
-hexPanel* hexListList::getPanel()
+hexList* hexListList::getList()
 {
-	return cursor->getHexPanel();
+	return cursor;
 }
 
 int hexListList::getLength()
 {
 	int count = 0;
 
-	cursor = head;
+	resetCursor();
 
 	while(cursor != nullptr){
 

@@ -2,7 +2,7 @@
 
 #define _HEXPANEL_
 
-enum class edgeStatus : unsigned short {NOTEDGE, TOP, TOPRIGHT, TOPLEFT, BOTTOM, BOTTOMRIGHT, BOTTOMLEFT, LEFT, RIGHT};
+enum class edgeStatus : unsigned short {NOTEDGE, TOP, TOPLEFT, TOPRIGHT, BOTTOM, BOTTOMLEFT, BOTTOMRIGHT, LEFT, RIGHT};
 
 class hexPanel
 {

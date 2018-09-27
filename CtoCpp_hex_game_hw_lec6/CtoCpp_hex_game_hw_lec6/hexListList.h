@@ -26,7 +26,7 @@ public:
 		}
 	}
 	void append(hexPanel* panel, unsigned short boardSize);
-	hexPanel* getPanel();
+	hexList* getList();
 	int getLength();
 	void resetCursor();
 };

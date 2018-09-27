@@ -74,6 +74,7 @@ public:
 	int getLength();
 	hexPanel* getHexPanel();
 	hexList* getNext();
+	void setNext(hexList* nextPtr);
 	hexPanel* search(unsigned short xPos, unsigned short yPos, short color);
 	void resetCursor();
 };
