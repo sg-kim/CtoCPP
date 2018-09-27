@@ -14,7 +14,7 @@ private:
 public:
 	hexBoard(unsigned short size):boardSize(size)
 	{
-		gameBoard = new hexPanel*[boardSize];
+		gameBoard = new (hexPanel**)[boardSize];
 		for(int i = 0; i < boardSize; i++){
 			gameBoard[i] = new hexPanel[boardSize];
 		}
