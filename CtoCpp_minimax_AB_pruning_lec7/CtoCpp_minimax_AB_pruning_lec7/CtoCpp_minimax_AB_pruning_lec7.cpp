@@ -68,7 +68,7 @@ int _tmain(int argc, _TCHAR* argv[])
 	miniMaxTree->displayTree(miniMaxTree->getCursor());
 
 	delete elements;
-	//delete miniMaxTree;
+	delete miniMaxTree;
 
 	return 0;
 }

@@ -19,11 +19,9 @@ public:
 	tree():root(nullptr), cursor(nullptr) {}
 	~tree()
 	{
-		if(root != nullptr){
-			delete root;
-		}
+		deleteTree(root);
 	}
-	//	basic tree structure
+	//	basic tree sub-structure
 	//
 	//		|		parents 
 	//		¡Û		node
@@ -104,6 +102,23 @@ public:
 		root = retVal;
 
 		return retVal;
+	}
+
+	void deleteTree(node* tree)
+	{
+		node* branch = tree;
+		node* nextNode;
+
+		if(branch->getChildren() != nullptr){
+			branch = branch->getChildren();
+			while(branch != nullptr){
+				nextNode = branch->getNext();	//	siblings
+				deleteTree(branch);
+				branch = nextNode;
+			}
+		}
+
+		delete tree;
 	}
 
 	void resetCursor()

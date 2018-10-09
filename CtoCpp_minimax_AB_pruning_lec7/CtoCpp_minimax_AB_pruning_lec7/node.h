@@ -16,19 +16,22 @@ public:
 	node():content(nullptr), parents(nullptr), children(nullptr), nextNode(nullptr){}
 	~node()
 	{
-		node* head = getChildren();
-		node* cursor;
+		//node* head = getChildren();
+		//node* cursor;
 
-		//	delete content
+		////	delete content
+		//if(content != nullptr){
+		//	delete content;
+		//}
+
+		////	delete children
+		//while(head != nullptr){
+		//	cursor = head->getNext();
+		//	delete head;
+		//	head = cursor;
+		//}
 		if(content != nullptr){
 			delete content;
-		}
-
-		//	delete children
-		while(head != nullptr){
-			cursor = head->getNext();
-			delete head;
-			head = cursor;
 		}
 	}
 	int getContent()
