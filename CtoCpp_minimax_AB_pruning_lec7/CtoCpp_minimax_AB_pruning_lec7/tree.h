@@ -35,17 +35,19 @@ public:
 		node* lastChild = parents->getChildren();
 
 		if(lastChild == nullptr){
-			lastChild = parents->setChildren(new node());
-			lastChild->setContent(child->getContent());
-			lastChild->setChildren(child->getChildren());
+			lastChild = parents->setChildren(new node());	//	set parents' children field
+			lastChild->setContent(child->getContent());		//	set child's content field
+			lastChild->setChildren(child->getChildren());	//	set child's children field
+			lastChild->setParents(parents);		//	set child's parents field
 		}
 		else{
 			while(lastChild->getNext() != nullptr){
 				lastChild = lastChild->getNext();
 			}
-			lastChild = lastChild->setNext(new node());
-			lastChild->setContent(child->getContent());
-			lastChild->setChildren(child->getChildren());
+			lastChild = lastChild->setNext(new node());		//	set	sibling field
+			lastChild->setContent(child->getContent());		//	set child's content field
+			lastChild->setChildren(child->getChildren());	//	set child's children field
+			lastChild->setParents(parents);		//	set child's parents field
 		}
 
 		return parents;
@@ -117,17 +119,17 @@ public:
 	void displayTree(node* tree)
 	{
 		node* nextNode;
-		
-		if(tree->getChildren() == nullptr){
+
+		if(tree->getChildren() == nullptr){		//	leaves
 			nextNode = tree;
-			while(nextNode != nullptr){
-				cout << nextNode->getContent() << endl;
-				nextNode = nextNode->getNext();
-			}
+			cout << nextNode->getContent() << endl;
 		}
 		else{
-			nextNode = tree->getChildren();
-			displayTree(nextNode);
+			nextNode = tree->getChildren();		//	the eldest child
+			while(nextNode != nullptr){
+				displayTree(nextNode);
+				nextNode = nextNode->getNext();		//	siblings
+			}
 			cout << tree->getContent() << endl;
 		}
 	}

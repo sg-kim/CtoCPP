@@ -51,18 +51,18 @@ int _tmain(int argc, _TCHAR* argv[])
 
 	cursor = miniMaxTree->graftNode(2, elements);
 
-	cout << cursor->getContent() << endl;
-	cout << cursor->getNumChildren() << endl;
+	//cout << cursor->getContent() << endl;
+	//cout << cursor->getNumChildren() << endl;
 
-	cursor = cursor->getChildren();
+	//cursor = cursor->getChildren();
 
-	cout << cursor->getContent() << endl;
-	cout << cursor->getNumChildren() << endl;
+	//cout << cursor->getContent() << endl;
+	//cout << cursor->getNumChildren() << endl;
 
-	cursor = cursor->getNext();
+	//cursor = cursor->getNext();
 
-	cout << cursor->getContent() << endl;
-	cout << cursor->getNumChildren() << endl;
+	//cout << cursor->getContent() << endl;
+	//cout << cursor->getNumChildren() << endl;
 
 	miniMaxTree->resetCursor();
 	miniMaxTree->displayTree(miniMaxTree->getCursor());
