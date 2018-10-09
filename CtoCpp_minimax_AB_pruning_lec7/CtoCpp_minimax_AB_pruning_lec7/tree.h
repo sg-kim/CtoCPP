@@ -54,8 +54,9 @@ public:
 
 				if(parents == nullptr){
 					parents = new node();
+					cursor = parents;
 					for(int i = 0; i < numChildren; i++){
-						addChild(parents, elements);
+						addChild(cursor, elements);
 						elements = elements->getNext();
 						if(elements == nullptr){
 							break;
@@ -63,7 +64,7 @@ public:
 					}	//	for
 				}
 				else{
-					cursor = parents->setNext(new node());
+					cursor = cursor->setNext(new node());
 					for(int i = 0; i < numChildren; i++){
 						addChild(cursor, elements);
 						elements = elements->getNext();
@@ -74,7 +75,7 @@ public:
 				}
 			}	//	while
 
-			graftNode(numChildren, parents);
+			retVal = graftNode(numChildren, parents);
 		}
 
 		return retVal;

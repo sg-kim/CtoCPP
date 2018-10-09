@@ -49,12 +49,21 @@ int _tmain(int argc, _TCHAR* argv[])
 
 	miniMaxTree = new tree();
 
-	miniMaxTree->graftNode(2, elements);
+	cursor = miniMaxTree->graftNode(2, elements);
+
+	cout << cursor->getContent() << endl;
+	cout << cursor->getNumChildren() << endl;
+
+	cursor = cursor->getChildren();
+
+	cout << cursor->getContent() << endl;
+	cout << cursor->getNumChildren() << endl;
 
 	miniMaxTree->resetCursor();
-	miniMaxTree->displayTree(miniMaxTree->getCursor());
+	//miniMaxTree->displayTree(miniMaxTree->getCursor());
 
-	delete elements;
+	//delete elements;
+	//delete miniMaxTree;
 
 	return 0;
 }
