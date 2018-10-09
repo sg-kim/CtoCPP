@@ -23,19 +23,27 @@ public:
 			delete root;
 		}
 	}
-
+	//	basic tree structure
+	//
+	//		|		parents 
+	//		¡Û		node
+	//	   £¯		children
+	//	 ¡Û ¡ª ¡Û	children -> next -> ...
+	//
 	node* addChild(node* parents, node* child)
 	{
 		node* lastChild = parents->getChildren();
 
 		if(lastChild == nullptr){
-			parents->setChildren(child);
+			lastChild = parents->setChildren(new node());
+			lastChild->setContent(child->getContent());
 		}
 		else{
 			while(lastChild->getNext() != nullptr){
 				lastChild = lastChild->getNext();
 			}
-			lastChild->setChildren(child);
+			lastChild = lastChild->setNext(new node());
+			lastChild->setContent(child->getContent());
 		}
 
 		return parents;
@@ -57,6 +65,7 @@ public:
 					cursor = parents;
 					for(int i = 0; i < numChildren; i++){
 						addChild(cursor, elements);
+						cout << i << ": " << elements->getContent() << endl;
 						elements = elements->getNext();
 						if(elements == nullptr){
 							break;
@@ -67,6 +76,7 @@ public:
 					cursor = cursor->setNext(new node());
 					for(int i = 0; i < numChildren; i++){
 						addChild(cursor, elements);
+						cout << i << i << ": " << elements->getContent() << endl;
 						elements = elements->getNext();
 						if(elements == nullptr){
 							break;

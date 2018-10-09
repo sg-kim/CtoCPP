@@ -10,7 +10,7 @@ private:
 	element* content;
 	node* parents;
 	node* children;
-	node* nextNode;	//	children siblings
+	node* nextNode;	//	siblings
 
 public:
 	node():content(nullptr), parents(nullptr), children(nullptr), nextNode(nullptr){}
@@ -65,9 +65,11 @@ public:
 	{
 		return children;
 	}
-	void setChildren(node* childrenPtr)
+	node* setChildren(node* childrenPtr)
 	{
 		children = childrenPtr;
+
+		return children;
 	}
 	node* getNext()
 	{
