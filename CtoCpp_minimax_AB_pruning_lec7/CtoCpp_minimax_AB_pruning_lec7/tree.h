@@ -37,6 +37,7 @@ public:
 		if(lastChild == nullptr){
 			lastChild = parents->setChildren(new node());
 			lastChild->setContent(child->getContent());
+			lastChild->setChildren(child->getChildren());
 		}
 		else{
 			while(lastChild->getNext() != nullptr){
@@ -44,6 +45,7 @@ public:
 			}
 			lastChild = lastChild->setNext(new node());
 			lastChild->setContent(child->getContent());
+			lastChild->setChildren(child->getChildren());
 		}
 
 		return parents;
@@ -65,7 +67,7 @@ public:
 					cursor = parents;
 					for(int i = 0; i < numChildren; i++){
 						addChild(cursor, elements);
-						cout << i << ": " << elements->getContent() << endl;
+						//cout << i << ": " << elements->getContent() << endl;
 						elements = elements->getNext();
 						if(elements == nullptr){
 							break;
@@ -76,7 +78,7 @@ public:
 					cursor = cursor->setNext(new node());
 					for(int i = 0; i < numChildren; i++){
 						addChild(cursor, elements);
-						cout << i << i << ": " << elements->getContent() << endl;
+						//cout << i << i << ": " << elements->getContent() << endl;
 						elements = elements->getNext();
 						if(elements == nullptr){
 							break;
@@ -85,8 +87,19 @@ public:
 				}
 			}	//	while
 
+			//node* nodePtr;
+			//nodePtr = parents;
+
+			//while(nodePtr != nullptr){
+			//	cout << nodePtr->getContent() << " --> ";
+			//	nodePtr = nodePtr->getNext();
+			//}
+			//cout << endl;
+
 			retVal = graftNode(numChildren, parents);
 		}
+
+		root = retVal;
 
 		return retVal;
 	}

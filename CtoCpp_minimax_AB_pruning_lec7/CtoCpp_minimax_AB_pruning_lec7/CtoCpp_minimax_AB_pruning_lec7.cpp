@@ -59,10 +59,15 @@ int _tmain(int argc, _TCHAR* argv[])
 	cout << cursor->getContent() << endl;
 	cout << cursor->getNumChildren() << endl;
 
-	miniMaxTree->resetCursor();
-	//miniMaxTree->displayTree(miniMaxTree->getCursor());
+	cursor = cursor->getNext();
 
-	//delete elements;
+	cout << cursor->getContent() << endl;
+	cout << cursor->getNumChildren() << endl;
+
+	miniMaxTree->resetCursor();
+	miniMaxTree->displayTree(miniMaxTree->getCursor());
+
+	delete elements;
 	//delete miniMaxTree;
 
 	return 0;
