@@ -46,7 +46,7 @@ public:
 		node* retVal = nullptr;
 		node* parents = nullptr;
 		
-		if(elements->getNext() != nullptr){
+		if(elements->getNext() == nullptr){
 			retVal = elements;
 		}
 		else{
@@ -54,7 +54,6 @@ public:
 
 				if(parents == nullptr){
 					parents = new node();
-					cursor = parents;
 					for(int i = 0; i < numChildren; i++){
 						addChild(parents, elements);
 						elements = elements->getNext();
@@ -84,6 +83,11 @@ public:
 	void resetCursor()
 	{
 		cursor = root;
+	}
+
+	node* getCursor()
+	{
+		return cursor;
 	}
 
 	void displayTree(node* tree)
