@@ -51,7 +51,7 @@ public:
 		return parents;
 	}
 
-	node* graftNode(unsigned int numChildren, node* elements)
+	node* graftNode(unsigned int numChildren, node* elements, bool initMax)
 	{
 		node* retVal = nullptr;
 		node* parents = nullptr;
@@ -73,6 +73,12 @@ public:
 							break;
 						}
 					}	//	for
+					if(initMax == true){
+						cursor->setContent(maxNode(cursor->getChildren())->getContent());
+					}
+					else{
+						cursor->setContent(minNode(cursor->getChildren())->getContent());
+					}
 				}
 				else{
 					cursor = cursor->setNext(new node());
@@ -84,6 +90,12 @@ public:
 							break;
 						}
 					}	//	for
+					if(initMax == true){
+						cursor->setContent(maxNode(cursor->getChildren())->getContent());
+					}
+					else{
+						cursor->setContent(minNode(cursor->getChildren())->getContent());
+					}
 				}
 			}	//	while
 
@@ -96,7 +108,7 @@ public:
 			//}
 			//cout << endl;
 
-			retVal = graftNode(numChildren, parents);
+			retVal = graftNode(numChildren, parents, (initMax^true));
 		}
 
 		root = retVal;
@@ -119,6 +131,42 @@ public:
 		}
 
 		delete tree;
+	}
+
+	node* minNode(node* elements)
+	{
+		node* nodeUnderTest = elements;
+		node* minValueNode = nodeUnderTest;
+		int minValue = minValueNode->getContent();
+
+		while(nodeUnderTest != nullptr){
+
+			if(nodeUnderTest->getContent() < minValue){
+				minValue = nodeUnderTest->getContent();
+				minValueNode = nodeUnderTest;
+			}
+			nodeUnderTest = nodeUnderTest->getNext();
+		}
+
+		return minValueNode;
+	}
+
+	node* maxNode(node* elements)
+	{
+		node* nodeUnderTest = elements;
+		node* maxValueNode = nodeUnderTest;
+		int maxValue = nodeUnderTest->getContent();
+
+		while(nodeUnderTest != nullptr){
+
+			if(nodeUnderTest->getContent() > maxValue){
+				maxValueNode = nodeUnderTest;
+				maxValue = maxValueNode->getContent();
+			}
+			nodeUnderTest = nodeUnderTest->getNext();
+		}
+
+		return maxValueNode;
 	}
 
 	void resetCursor()

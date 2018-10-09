@@ -49,7 +49,7 @@ int _tmain(int argc, _TCHAR* argv[])
 
 	miniMaxTree = new tree();
 
-	cursor = miniMaxTree->graftNode(2, elements);
+	cursor = miniMaxTree->graftNode(2, elements, true);
 
 	//cout << cursor->getContent() << endl;
 	//cout << cursor->getNumChildren() << endl;
