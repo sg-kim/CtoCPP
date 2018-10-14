@@ -31,7 +31,7 @@ public:
 	{
 		return use;
 	}
-	virtual int eval() = 0;
+	virtual int eval() = 0;		//	pure virtual function
 };
 
 class tree
