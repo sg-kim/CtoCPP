@@ -96,9 +96,9 @@ void hexBoard::setPanel(unsigned short xpos, unsigned short ypos, unsigned short
 	panel.setNext(nullptr);
 
 	//	set position(x, y) and color of a hex panel in the board
-	gameBoard[xpos][ypos].setXPos(xpos, boardSize);
-	gameBoard[xpos][ypos].setYPos(ypos, boardSize);
-	gameBoard[xpos][ypos].setColor(color);
+	gameBoard[ypos][xpos].setXPos(xpos, boardSize);
+	gameBoard[ypos][xpos].setYPos(ypos, boardSize);
+	gameBoard[ypos][xpos].setColor(color);
 
 	//	include the new panel in the path list
 	updatePath(panel);
@@ -120,33 +120,13 @@ bool hexBoard::updatePath(hexPanel panel)
 
 	//	if there is a friendly hexPanel, expand the player's path graph or create new graph
 
+	//	basic hex formation
+	//
+	//	    | UL| UR|
+	//	  | L | * | R |
+	//		| BL| BR|
+	//
 	while(curPath != nullptr){		//	visit all paths
-
-		//	upper neighbor
-		if((yPos - 1) >= 0){
-
-			curPanel = curPath->search(xPos, (yPos - 1), color);
-
-			if(curPanel != nullptr){
-				newPath = false;
-				curPath->append(&panel, boardSize);
-				curPath = curPath->getNext();
-				continue;
-			}
-		}
-
-		//	upper-right neighbor
-		if((xPos + 1) <= (boardSize - 1) && (yPos - 1) >= 0){
-
-			curPanel = curPath->search((xPos + 1), (yPos - 1), color);
-
-			if(curPanel != nullptr){
-				newPath = false;
-				curPath->append(&panel, boardSize);
-				curPath = curPath->getNext();
-				continue;
-			}
-		}
 
 		//	left neighbor
 		if((xPos - 1) >= 0){
@@ -161,6 +141,34 @@ bool hexBoard::updatePath(hexPanel panel)
 			}
 		}
 
+		//	upper-left neighbor
+		if((xPos - 1) >= 0 && (yPos - 1) >= 0){
+
+			curPanel = curPath->search((xPos - 1), (yPos - 1), color);
+
+			if(curPanel != nullptr){
+				newPath = false;
+				curPath->append(&panel, boardSize);
+				curPath = curPath->getNext();
+				continue;
+			}
+		}
+
+		//	upper-right neighbor
+		if((yPos - 1) >= 0){
+
+			curPanel = curPath->search(xPos, (yPos - 1), color);
+
+			if(curPanel != nullptr){
+				newPath = false;
+				curPath->append(&panel, boardSize);
+				curPath = curPath->getNext();
+				continue;
+			}
+		}
+
+
+
 		//	right neighbor
 		if((xPos + 1) <= (boardSize - 1)){
 
@@ -174,10 +182,21 @@ bool hexBoard::updatePath(hexPanel panel)
 			}
 		}
 
-		//	bottom neighbor
+		//	bottom-right neighbor
 		if((yPos + 1) <= (boardSize - 1)){
 
 			curPanel = curPath->search(xPos, (yPos + 1), color);
+
+			if(curPanel != nullptr){
+				newPath = false;
+				curPath->append(&panel, boardSize);
+			}
+		}
+
+		//	bottom - left neighbor
+		if((xPos - 1) >= 0 && (yPos + 1) <= (boardSize - 1)){
+
+			curPanel = curPath->search((xPos - 1), (yPos + 1), color);
 
 			if(curPanel != nullptr){
 				newPath = false;
@@ -187,17 +206,6 @@ bool hexBoard::updatePath(hexPanel panel)
 			}
 		}
 
-		//	bottom-right neighbor
-		if((xPos + 1) <= (boardSize - 1) && (yPos + 1) <= (boardSize - 1)){
-
-			curPanel = curPath->search((xPos + 1), (yPos + 1), color);
-
-			if(curPanel != nullptr){
-				newPath = false;
-				curPath->append(&panel, boardSize);
-			}
-		}
-		
 		curPath = curPath->getNext();
 	}	//	visit all paths
 
@@ -218,17 +226,17 @@ void hexBoard::displayBoard()
 	//}
 	//cout << endl;
 
-	for(int i = 0; i < boardSize; i++){
-		if(i%2 == 1){
+	for(int y = 0; y < boardSize; y++){
+		if(y%2 == 1){
 			cout << "  ";
 		}
-		for(int j = 0; j < boardSize; j++){
+		for(int x = 0; x < boardSize; x++){
 			cout << "| ";
-			if(gameBoard[i][j].getColor() < 0){
+			if(gameBoard[y][x].getColor() < 0){
 				cout << "_" << " ";
 			}
 			else{
-				cout << gameBoard[i][j].getColor() << " ";
+				cout << gameBoard[y][x].getColor() << " ";
 			}
 		}
 		cout << "|" << endl;

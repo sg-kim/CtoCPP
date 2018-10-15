@@ -18,8 +18,8 @@ public:
 	hexBoard(unsigned short size):boardSize(size)
 	{
 		gameBoard = new hexPanel*[boardSize];
-		for(int i = 0; i < boardSize; i++){
-			gameBoard[i] = new hexPanel[boardSize];
+		for(int y = 0; y < boardSize; y++){
+			gameBoard[y] = new hexPanel[boardSize];
 		}
 
 		player = new hexPanel[2];
@@ -27,8 +27,8 @@ public:
 	}
 	~hexBoard()
 	{
-		for(int i = 0; i < boardSize; i++){
-			delete [] gameBoard[i];
+		for(int y = 0; y < boardSize; y++){
+			delete [] gameBoard[y];
 		}
 		
 		delete [] gameBoard;

@@ -27,43 +27,63 @@ int _tmain(int argc, _TCHAR* argv[])
 	gameBoard->displayBoard();
 	gameBoard->displayPath();
 
+	winner = gameBoard->isWinner();
+	cout << "Winner = " << winner << endl;
+
 	gameBoard->setPanel(0, 1, 0);
 
 	gameBoard->displayBoard();
 	gameBoard->displayPath();
+
+	winner = gameBoard->isWinner();
+	cout << "Winner = " << winner << endl;
 
 	gameBoard->setPanel(1, 0, 0);
 
 	gameBoard->displayBoard();
 	gameBoard->displayPath();
 
+	winner = gameBoard->isWinner();
+	cout << "Winner = " << winner << endl;
+
 	gameBoard->setPanel(1, 1, 0);
 
 	gameBoard->displayBoard();
 	gameBoard->displayPath();
+
+	winner = gameBoard->isWinner();
+	cout << "Winner = " << winner << endl;
 
 	gameBoard->setPanel(3, 3, 0);
 
 	gameBoard->displayBoard();
 	gameBoard->displayPath();
 
+	winner = gameBoard->isWinner();
+	cout << "Winner = " << winner << endl;
+
 	gameBoard->setPanel(2, 2, 0);
 
 	gameBoard->displayBoard();
 	gameBoard->displayPath();
 
-	gameBoard->setPanel(3, 2, 0);
+	winner = gameBoard->isWinner();
+	cout << "Winner = " << winner << endl;
 
-	gameBoard->displayBoard();
-	gameBoard->displayPath();
-
-	gameBoard->setPanel(4, 3, 0);
+	gameBoard->setPanel(2, 3, 0);
 
 	gameBoard->displayBoard();
 	gameBoard->displayPath();
 
 	winner = gameBoard->isWinner();
+	cout << "Winner = " << winner << endl;
 
+	gameBoard->setPanel(4, 4, 0);
+
+	gameBoard->displayBoard();
+	gameBoard->displayPath();
+
+	winner = gameBoard->isWinner();
 	cout << "Winner = " << winner << endl;
 
 	//for(int i = 0; i < boardSize; i++){
