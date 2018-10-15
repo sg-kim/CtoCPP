@@ -14,6 +14,7 @@ class hexListList
 private:
 	hexList* head;
 	hexList* cursor;
+	hexList* connectedList;
 
 public:
 	hexListList():head(nullptr), cursor(nullptr){}
@@ -36,6 +37,9 @@ public:
 	void resetCursor();
 	void display();
 	void deleteList(hexList* targetList);
+	void removeLink(hexList* targetList);
+	bool collectConnectedPath(hexPanel* targetPanel);
+	hexList* mergeList(hexList* dst, hexList* src);
 };
 
 void hexListList::append(hexPanel* panel, unsigned short boardSize)
@@ -127,5 +131,69 @@ void hexListList::deleteList(hexList* targetList)
 	}
 }
 
-#endif // !_HEXLISTLIST_
+void hexListList::removeLink(hexList* targetList)
+{
+	hexList* prevList = nullptr;
 
+	if(targetList == head){
+		head = targetList->getNext();
+	}
+	else{
+		resetCursor();
+
+		while(cursor != nullptr){
+
+			if(cursor == targetList){
+				break;
+			}
+			else{
+				prevList = cursor;
+				cursor = cursor->getNext();
+			}
+		}
+
+		if(cursor != nullptr){
+			prevList->setNext(cursor->getNext());
+		}
+	}
+}
+
+bool hexListList::collectConnectedPath(hexPanel* targetPanel)
+{
+	hexPanel* foundPanel;
+	bool retVal = false;
+	
+	connectedList == nullptr;
+	resetCursor();
+
+	while(cursor != nullptr){
+
+		foundPanel = cursor->search(targetPanel->getXpos(), targetPanel->getYpos(), targetPanel->getColor());
+		if((foundPanel->getXpos() == targetPanel->getXpos()) &&
+			(foundPanel->getYpos() == targetPanel->getYpos()) &&
+			(foundPanel->getColor() == targetPanel->getColor())){
+
+				retVal = true;
+
+				if(connectedList == nullptr){
+					connectedList = cursor;
+					removeLink(cursor);
+				}
+				else{
+					connectedList->setNext(cursor);
+					removeLink(cursor);
+				}
+		}
+
+		cursor = cursor->getNext();
+	}
+
+	return retVal;
+}
+
+hexList* hexListList::mergeList(hexList* dst, hexList* src)
+{
+
+}
+
+#endif // !_HEXLISTLIST_
