@@ -6,7 +6,8 @@
 #include "hexList.h"
 #include "hexListList.h"
 
-using namespace std;
+using std::cout;
+using std::endl;
 
 int hexBoard::isWinner()
 {
@@ -209,11 +210,28 @@ bool hexBoard::updatePath(hexPanel panel)
 
 void hexBoard::displayBoard()
 {
+	//for(int i = 0; i < boardSize; i++){
+	//	for(int j = 0; j < boardSize; j++){
+	//		cout << "(" << gameBoard[j][i].getXpos() << ", " << gameBoard[j][i].getYpos() << ", " << gameBoard[j][i].getColor() << ")" << "\t";
+	//	}
+	//	cout << endl;
+	//}
+	//cout << endl;
+
 	for(int i = 0; i < boardSize; i++){
-		for(int j = 0; j < boardSize; j++){
-			cout << "(" << gameBoard[j][i].getXpos() << ", " << gameBoard[j][i].getYpos() << ", " << gameBoard[j][i].getColor() << ")" << "\t";
+		if(i%2 == 1){
+			cout << "  ";
 		}
-		cout << endl;
+		for(int j = 0; j < boardSize; j++){
+			cout << "| ";
+			if(gameBoard[i][j].getColor() < 0){
+				cout << "_" << " ";
+			}
+			else{
+				cout << gameBoard[i][j].getColor() << " ";
+			}
+		}
+		cout << "|" << endl;
 	}
 	cout << endl;
 }

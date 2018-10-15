@@ -22,39 +22,83 @@ int _tmain(int argc, _TCHAR* argv[])
 
 	gameBoard->displayBoard();
 
-	for(int i = 0; i < boardSize; i++){
-		for(int j = 0; j < boardSize; j++){
-
-			gameBoard->setPanel(j, i, i%2);
-		}
-	}
+	gameBoard->setPanel(0, 0, 0);
 
 	gameBoard->displayBoard();
+	gameBoard->displayPath();
 
+	gameBoard->setPanel(0, 1, 0);
+
+	gameBoard->displayBoard();
+	gameBoard->displayPath();
+
+	gameBoard->setPanel(1, 0, 0);
+
+	gameBoard->displayBoard();
+	gameBoard->displayPath();
+
+	gameBoard->setPanel(1, 1, 0);
+
+	gameBoard->displayBoard();
+	gameBoard->displayPath();
+
+	gameBoard->setPanel(3, 3, 0);
+
+	gameBoard->displayBoard();
+	gameBoard->displayPath();
+
+	gameBoard->setPanel(2, 2, 0);
+
+	gameBoard->displayBoard();
+	gameBoard->displayPath();
+
+	gameBoard->setPanel(3, 2, 0);
+
+	gameBoard->displayBoard();
+	gameBoard->displayPath();
+
+	gameBoard->setPanel(4, 3, 0);
+
+	gameBoard->displayBoard();
 	gameBoard->displayPath();
 
 	winner = gameBoard->isWinner();
 
 	cout << "Winner = " << winner << endl;
 
-	delete gameBoard;
+	//for(int i = 0; i < boardSize; i++){
+	//	for(int j = 0; j < boardSize; j++){
 
-	gameBoard = new hexBoard(boardSize);
+	//		gameBoard->setPanel(j, i, i%2);
+	//	}
+	//}
 
-	for(int i = 0; i < boardSize; i++){
-		for(int j = 0; j < boardSize; j++){
+	//gameBoard->displayBoard();
 
-			gameBoard->setPanel(j, i, j%2);
-		}
-	}
+	//gameBoard->displayPath();
 
-	gameBoard->displayBoard();
+	//winner = gameBoard->isWinner();
 
-	gameBoard->displayPath();
+	//cout << "Winner = " << winner << endl;
 
-	winner = gameBoard->isWinner();
+	//delete gameBoard;
 
-	cout << "Winner = " << winner << endl;
+	//gameBoard = new hexBoard(boardSize);
+
+	//for(int i = 0; i < boardSize; i++){
+	//	for(int j = 0; j < boardSize; j++){
+
+	//		gameBoard->setPanel(j, i, j%2);
+	//	}
+	//}
+
+	//gameBoard->displayBoard();
+
+	//gameBoard->displayPath();
+
+	//winner = gameBoard->isWinner();
+
+	//cout << "Winner = " << winner << endl;
 
 	delete gameBoard;
 

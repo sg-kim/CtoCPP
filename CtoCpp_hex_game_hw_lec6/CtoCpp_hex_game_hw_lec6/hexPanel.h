@@ -60,5 +60,4 @@ public:
 	edgeStatus getEdgeStatus();
 };
 
-
 #endif // !_HEXPANEL_
