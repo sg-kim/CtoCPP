@@ -44,14 +44,5 @@
     <ClCompile Include="CtoCpp_hex_game_hw_lec6.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="hexBoard.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="hexList.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="hexListList.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
   </ItemGroup>
 </Project>

@@ -88,9 +88,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CtoCpp_hex_game_hw_lec6.cpp" />
-    <ClCompile Include="hexBoard.cpp" />
-    <ClCompile Include="hexListList.cpp" />
-    <ClCompile Include="hexList.cpp" />
     <ClCompile Include="stdafx.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
