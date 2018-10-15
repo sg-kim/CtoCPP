@@ -14,7 +14,6 @@ class hexListList
 private:
 	hexList* head;
 	hexList* cursor;
-	hexList* connectedList;
 
 public:
 	hexListList():head(nullptr), cursor(nullptr){}
@@ -38,8 +37,10 @@ public:
 	void display();
 	void deleteList(hexList* targetList);
 	void removeLink(hexList* targetList);
-	bool collectConnectedPath(hexPanel* targetPanel);
-	void mergeList(hexList* dst, hexList* src, unsigned short boardSize);
+	//bool collectConnectedPath(hexPanel* targetPanel);
+	//void mergeList(hexList* dst, hexList* src, unsigned short boardSize);
+	//hexList* getLongestPath();
+	void mergePath();
 };
 
 void hexListList::append(hexPanel* panel, unsigned short boardSize)
@@ -158,40 +159,38 @@ void hexListList::removeLink(hexList* targetList)
 	}
 }
 
-bool hexListList::collectConnectedPath(hexPanel* targetPanel)
+hexList* collectConnectedPath(hexPanel* targetPanel, hexList* targetList)
 {
+	hexList* connectedList;
+	hexList* listUnderTest;
 	hexPanel* foundPanel;
 	bool retVal = false;
 	
 	connectedList = nullptr;
-	resetCursor();
+	listUnderTest = targetList;
 
-	while(cursor != nullptr){
+	while(listUnderTest != nullptr){
 
-		foundPanel = cursor->search(targetPanel->getXpos(), targetPanel->getYpos(), targetPanel->getColor());
+		foundPanel = listUnderTest->search(targetPanel->getXpos(), targetPanel->getYpos(), targetPanel->getColor());
 		if((foundPanel->getXpos() == targetPanel->getXpos()) &&
 			(foundPanel->getYpos() == targetPanel->getYpos()) &&
 			(foundPanel->getColor() == targetPanel->getColor())){
 
-				retVal = true;
-
 				if(connectedList == nullptr){
-					connectedList = cursor;
-					removeLink(cursor);
+					connectedList = listUnderTest;
 				}
 				else{
-					connectedList->setNext(cursor);
-					removeLink(cursor);
+					connectedList->setNext(listUnderTest);
 				}
 		}
 
-		cursor = cursor->getNext();
+		listUnderTest = listUnderTest->getNext();
 	}
 
-	return retVal;
+	return connectedList;
 }
 
-void hexListList::mergeList(hexList* dst, hexList* src, unsigned short boardSize)
+void mergeList(hexList* dst, hexList* src, unsigned short boardSize)
 {
 	hexPanel* srcCursor;
 	hexPanel* foundPanel;
@@ -209,6 +208,67 @@ void hexListList::mergeList(hexList* dst, hexList* src, unsigned short boardSize
 
 		srcCursor = srcCursor->getNext();
 	}
+}
+
+hexList* getLongestPath(hexList* targetList)
+{
+	hexList* theLongestList;
+	hexList* listUnderTest;
+	int theLongestLength;
+
+	listUnderTest = targetList;
+	theLongestList = targetList;
+	theLongestLength = targetList->getLength();
+
+	while(targetList != nullptr){
+		
+		if(targetList->getLength() > theLongestLength){
+			theLongestLength = targetList->getLength();
+			theLongestList = targetList;
+		}
+
+		targetList = targetList->getNext();
+	}
+
+	return theLongestList;
+}
+
+void hexListList::mergePath(hexPanel* targetPanel, unsigned short boardSize)
+{
+	hexList* connectedList;
+	hexList* theLongestPath;
+	hexList* srcList;
+
+	resetCursor();
+
+	//	collect connected path
+	connectedList = collectConnectedPath(targetPanel, cursor);
+
+	if(connectedList->getLength() > 1){
+
+		//	find the longest path
+		theLongestPath = getLongestPath(connectedList);
+
+		//	merge connected path into a path list
+		srcList = connectedList;
+
+		while(srcList != nullptr){
+
+			if(srcList == theLongestPath){
+				srcList = srcList->getNext();
+				continue;
+			}
+			else{
+				mergeList(theLongestPath, srcList, boardSize);
+			}
+		}
+
+		//	remove unnessary lists in the path
+
+		//	delete unnessary lists
+
+	}
+
 }
 
 #endif // !_HEXLISTLIST_
