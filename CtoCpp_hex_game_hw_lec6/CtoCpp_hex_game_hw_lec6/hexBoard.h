@@ -252,6 +252,9 @@ bool hexBoard::updatePath(hexPanel panel)
 	if(newPath == true){
 		pathList[color].append(&panel, boardSize);
 	}
+	//else{
+	//	pathList[color].mergePath(&panel, boardSize);
+	//}
 
 	return newPath;
 }
