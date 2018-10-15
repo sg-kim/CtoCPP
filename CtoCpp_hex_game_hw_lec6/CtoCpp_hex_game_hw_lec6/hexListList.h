@@ -39,7 +39,7 @@ public:
 	void deleteList(hexList* targetList);
 	void removeLink(hexList* targetList);
 	bool collectConnectedPath(hexPanel* targetPanel);
-	hexList* mergeList(hexList* dst, hexList* src);
+	void mergeList(hexList* dst, hexList* src, unsigned short boardSize);
 };
 
 void hexListList::append(hexPanel* panel, unsigned short boardSize)
@@ -163,7 +163,7 @@ bool hexListList::collectConnectedPath(hexPanel* targetPanel)
 	hexPanel* foundPanel;
 	bool retVal = false;
 	
-	connectedList == nullptr;
+	connectedList = nullptr;
 	resetCursor();
 
 	while(cursor != nullptr){
@@ -191,9 +191,24 @@ bool hexListList::collectConnectedPath(hexPanel* targetPanel)
 	return retVal;
 }
 
-hexList* hexListList::mergeList(hexList* dst, hexList* src)
+void hexListList::mergeList(hexList* dst, hexList* src, unsigned short boardSize)
 {
+	hexPanel* srcCursor;
+	hexPanel* foundPanel;
 
+	src->resetCursor();
+	srcCursor = src->getHexPanel();
+
+	while(srcCursor != nullptr){
+
+		foundPanel = dst->search(srcCursor->getXpos(), srcCursor->getYpos(), srcCursor->getColor());
+
+		if(foundPanel == nullptr){	//	dst list does not have the panel under test
+			dst->append(foundPanel, boardSize);
+		}
+
+		srcCursor = srcCursor->getNext();
+	}
 }
 
 #endif // !_HEXLISTLIST_
