@@ -44,7 +44,7 @@ void hexList::copyHexList(hexList* l)	//	deep copy
 
 		l->resetCursor();
 
-		p = l->getCursor();
+		p = l->getCursor();		//	p = target panel
 
 		head = new hexPanel(*p);
 		cursor = head;
@@ -68,7 +68,7 @@ void hexList::resetCursor()
 
 void hexList::append(hexList& l)
 {
-	next = l.getNext();
+	next = &l;
 }
 
 void hexList::appendPanel(int x, int y, int c)
@@ -114,7 +114,7 @@ void hexList::print()
 		cout << " -> ";
 		cursor = cursor->getNext();
 	}
-	cout << endl;
+	//cout << endl;
 }
 
 #endif // !_HEX_LIST_
