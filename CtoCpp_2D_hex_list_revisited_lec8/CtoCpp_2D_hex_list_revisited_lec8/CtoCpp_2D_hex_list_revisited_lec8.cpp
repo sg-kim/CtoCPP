@@ -61,8 +61,8 @@ int _tmain(int argc, _TCHAR* argv[])
 
 	hexListList* hListList = new hexListList();
 
-	hListList->appendList(*hList2);
-	hListList->appendList(*hList3);
+	hListList->appendList(hList2);
+	hListList->appendList(hList3);
 
 	cout << "hListList: " << hListList << endl;
 

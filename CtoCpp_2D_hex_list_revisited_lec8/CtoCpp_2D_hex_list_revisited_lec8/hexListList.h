@@ -14,24 +14,20 @@ class hexListList
 private:
 	hexList* head;
 	hexList* cursor;
-	hexListList* next;
 
 public:
-	hexListList(): head(nullptr), cursor(nullptr), next(nullptr) {}
+	hexListList(): head(nullptr), cursor(nullptr) {}
 	hexListList(hexListList& ll)	//	shallow copy
 	{
 		head = ll.getHead();
 		cursor = ll.getCursor();
-		next = ll.getNext();
 	}
 	~hexListList() {}
 	void copyhexListList(hexListList* ll);	//	deep copy
 	void resetCursor();
-	void appendList(hexList& l);
-	void append(hexListList& ll);
+	void appendList(hexList* l);
 	hexList* getHead();
 	hexList* getCursor();
-	hexListList* getNext();
 	void print();
 };
 
@@ -54,7 +50,7 @@ void hexListList::copyhexListList(hexListList* ll)	//	deep copy
 
 		while(l != nullptr){
 
-			cursor->append(*(new hexList()));
+			cursor->append(new hexList());
 			cursor = cursor->getNext();
 			cursor->copyHexList(l);
 
@@ -68,12 +64,12 @@ void hexListList::resetCursor()
 	cursor = head;
 }
 
-void hexListList::appendList(hexList& l)
+void hexListList::appendList(hexList* l)
 {
 	resetCursor();
 
 	if(cursor == nullptr){
-		head = &l;
+		head = l;
 		cursor = head;
 	}
 	else{
@@ -87,16 +83,9 @@ void hexListList::appendList(hexList& l)
 	}
 }
 
-void hexListList::append(hexListList& ll)
-{
-	next = &ll;
-}
-
 hexList* hexListList::getHead()	{	return head;	}
 
 hexList* hexListList::getCursor()	{	return cursor;	}
-
-hexListList* hexListList::getNext()	{	return next;	}
 
 void hexListList::print()
 {

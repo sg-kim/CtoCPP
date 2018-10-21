@@ -27,7 +27,7 @@ public:
 	~hexList() {}
 	void copyHexList(hexList* l);	//	deep copy
 	void resetCursor();
-	void append(hexList& l);
+	void append(hexList* l);
 	void appendPanel(int x, int y, int c);
 	//void appendPanel(hexPanel& p);
 	hexPanel* getHead();
@@ -66,9 +66,9 @@ void hexList::resetCursor()
 	cursor = head;
 }
 
-void hexList::append(hexList& l)
+void hexList::append(hexList* l)
 {
-	next = &l;
+	next = l;
 }
 
 void hexList::appendPanel(int x, int y, int c)
