@@ -3,61 +3,80 @@
 
 #include "stdafx.h"
 
+#include <assert.h>
+
 #include <iostream>
 #include <vector>
 
-using namespace std;
+using std::cout;
+using std::endl;
 
-template<typename T>
-void efficientMove(vector<T>& a, vector<T>&& b)
+class arrData
 {
-	a = b;
-	b = nullptr;
-}
+private:
+	int size;
+	int* data;
+public:
+	arrData(): size(0), data(nullptr) {}
+	arrData(int s)
+	{
+		size = s;
+		data = new int[size];
+		for(int i = 0; i < size; i++){
+			data[i] = i;
+		}
+	}
+	arrData(arrData& src)	//	copy constructor
+	{
+		size = src.getSize();
+		data = new int[size];
+		for(int i = 0; i < size; i++){
+			data[i] = src.getData(i);
+		}
+	};
+	arrData(arrData&& src)	//	move constructor
+	{
+		size = src.size;
+		data = src.data;
+		src.data = nullptr;
+	}
+	~arrData()
+	{
+		delete[] data;
+	}
+	int getSize() { return size; }
+	int getData(int index)
+	{
+		assert(index < size);
+		return data[index];
+	}
+	void print()
+	{
+		for(int i = 0; i < size; i++){
+			cout << i << " ";
+		}
+		cout << endl;
+	}
+};
 
-int foo()
+int main()
 {
-	return 10;
-}
 
-int _tmain(int argc, _TCHAR* argv[])
-{
+	arrData a = arrData(5);
+	arrData b = arrData(a);		//	deep copying 'a'
+	arrData c = arrData(arrData(10));	//	move 'arrData(10)' to 'c'
+
+	a.print();
+	b.print();
+	c.print();
+
+	arrData d = arrData(std::move(c));
+
+	d.print();
+
+	cout << c.getSize() << endl;
 	
-	int a = foo();
-	int& b = a;
-	int&& c = foo();
-
-	cout << a << endl;
-	cout << b << endl;
-	cout << c << endl;
-
-	vector<int> va(5);
-	vector<int> vb(5);
-
-	for(int i = 0; i < 5; i++){
-		va[i] = i;
-		vb[i] = i + 5;
-	}
-
-	for(int i = 0; i < 5; i++){
-		cout << va[i] << endl;
-	}
-
-	for(int i = 0; i < 5; i++){
-		cout << vb[i] << endl;
-	}
-
-	efficientMove(va, vb);
-	
-	for(int i = 0; i < 5; i++){
-		cout << va[i] << endl;
-	}
-
-	for(int i = 0; i < 5; i++){
-		cout << vb[i] << endl;
-	}
-
+	c.print();
 
 	return 0;
 }
-
