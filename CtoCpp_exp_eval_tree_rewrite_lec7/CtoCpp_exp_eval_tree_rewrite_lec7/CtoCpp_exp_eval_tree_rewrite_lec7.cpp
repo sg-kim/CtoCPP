@@ -43,7 +43,7 @@ public:
 	tree(char c);
 	tree(char op, tree opnd);
 	tree(char op, tree opnd1, tree opnd2);
-	tree(tree& t)
+	tree(tree& t)	//	copy constructor
 	{
 		p = t.p;
 		p->incUse();
