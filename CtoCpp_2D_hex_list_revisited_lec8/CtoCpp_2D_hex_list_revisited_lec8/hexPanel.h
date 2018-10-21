@@ -22,10 +22,11 @@ public:
 		xPos = p.getXpos();
 		yPos = p.getYpos();
 		color = p.getColor();
+		next = nullptr;
 	}
 	~hexPanel() {}
 	void append(int x, int y, int c);
-	void append(hexPanel& p);
+	//void append(hexPanel& p);
 	int getXpos();
 	int getYpos();
 	int getColor();
@@ -38,10 +39,10 @@ void hexPanel::append(int x, int y, int c)
 	next = new hexPanel(x, y, c);
 }
 
-void hexPanel::append(hexPanel& p)
-{
-	next = &p;
-}
+//void hexPanel::append(hexPanel& p)
+//{
+//	next = &p;
+//}
 
 int hexPanel::getXpos() {	return xPos;	}
 int hexPanel::getYpos() {	return yPos;	}
@@ -50,7 +51,7 @@ hexPanel* hexPanel::getNext() {		return next;	}
 
 void hexPanel::print()
 {
-	cout << "(" << xPos << ", " << yPos << ", " << color << ")" << endl;
+	cout << "(" << xPos << ", " << yPos << ", " << color << ")";
 }
 
 #endif // !_HEX_PANEL_
